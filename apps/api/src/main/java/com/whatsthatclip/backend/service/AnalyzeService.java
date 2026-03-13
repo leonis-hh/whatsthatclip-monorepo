@@ -89,6 +89,7 @@ public class AnalyzeService {
                 }
 
                 String finalTitle, type, date, overview, posterPath;
+                Integer tmdbId;
 
                 if (movie != null && (tv == null || movie.getPopularity() > tv.getPopularity())) {
                     finalTitle = movie.getTitle();
@@ -96,12 +97,14 @@ public class AnalyzeService {
                     date = movie.getRelease_date();
                     overview = movie.getOverview();
                     posterPath = movie.getPoster_path();
+                    tmdbId = movie.getId();
                 } else {
                     finalTitle = tv.getName();
                     type = "TV Show";
                     date = tv.getFirst_air_date();
                     overview = tv.getOverview();
                     posterPath = tv.getPoster_path();
+                    tmdbId = tv.getId();
                 }
 
                 return buildFinalResponse(finalTitle, type, date, overview, posterPath, videoUrl);
@@ -246,7 +249,7 @@ public class AnalyzeService {
                 .build();
 
         GenerateContentResponse response = client.models.generateContent(
-                "gemini-3-pro-preview",
+                "gemini-3.1-pro-preview",
                 content,
                 config
         );
