@@ -1,4 +1,4 @@
-# WhatsThatClip Monorepo
+# WhatsThatClip
 
 WhatsThatClip is a full-stack app that identifies movies and TV shows from short video clips/links, then lets users save results, view search history, and check where titles are available to watch.
 
