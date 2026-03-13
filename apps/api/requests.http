@@ -1,0 +1,57 @@
+###
+# @timeout 600
+POST http://localhost:8080/api/analyze
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzY5ODkzOTgzLCJleHAiOjE3Njk5ODAzODN9.LkXyDy7haVfF_Yd7U-SPiKX_3UWVBs90HN87eXlurgQ
+
+{
+  "videoUrl": "https://vt.tiktok.com/ZSaVBop2A/"
+}
+
+
+###
+
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+###
+GET http://localhost:8080/api/history
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzY5ODkzOTgzLCJleHAiOjE3Njk5ODAzODN9.LkXyDy7haVfF_Yd7U-SPiKX_3UWVBs90HN87eXlurgQ
+
+###
+POST http://localhost:8080/api/auth/signup
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+###
+
+GET http://localhost:8080/api/favorites
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzcwMDQ4OTcyLCJleHAiOjE3NzAxMzUzNzJ9.xr0pdZ_PPDpW1lH2UFQnIHehBikKbRShfXnC6_sKLhQ
+
+###
+
+POST http://localhost:8080/api/favorites
+Authorization: Bearer <your-token>
+Content-Type: application/json
+
+{
+  "title": "Inception",
+  "type": "Movie",
+  "year": "2010",
+  "overview": "A thief who steals corporate secrets...",
+  "posterUrl": "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdT.jpg"
+}
+
+###
+
+GET http://localhost:8080/api/user/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0QGV4YW1wbGUuY29tIiwiaWF0IjoxNzcwMDQ4OTcyLCJleHAiOjE3NzAxMzUzNzJ9.xr0pdZ_PPDpW1lH2UFQnIHehBikKbRShfXnC6_sKLhQ
