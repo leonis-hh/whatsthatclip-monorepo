@@ -10,5 +10,5 @@ public class AnalyzeResponse {
     private String message;
     private String overview;
     private String posterUrl;
-
+    private Integer tmdbId;
 }
